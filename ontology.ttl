@@ -1,0 +1,806 @@
+@prefix : <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#> .
+
+<http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Part_of
+:Part_of rdf:type owl:ObjectProperty ;
+         rdfs:domain :Body ,
+                     :Brake ,
+                     :CHASIS ,
+                     :Engine ,
+                     :Exhuast_System ,
+                     :Steering ,
+                     :The_Auxiliaries ,
+                     :Transmision_System ,
+                     :Vehicle_Component ,
+                     <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> ;
+         rdfs:range <http://www.semanticweb.org/memoona/ontologies/2022/2/Brake_calliper> ,
+                    :Accessory_Drive ,
+                    :Actrive_steering ,
+                    :Antilock_brake_system ,
+                    :Belt_Drive_Components ,
+                    :Binary_lambda_sensor ,
+                    :Body ,
+                    :Brake ,
+                    :Brake_Line ,
+                    :Brake_cylinder ,
+                    :Brake_disc ,
+                    :Brake_drum ,
+                    :Brake_fluid ,
+                    :Brake_lubricant ,
+                    :CHASIS ,
+                    :Camshaft ,
+                    :Catalytic_converter ,
+                    :Chain_drive ,
+                    :Clutch ,
+                    :Coupling_rod ,
+                    :Diesel_particulate_filter ,
+                    :Differential ,
+                    :Disc_brake ,
+                    :Electric_parking_brak ,
+                    :Electric_power_steering_system ,
+                    :Engine ,
+                    :Exhuast_System ,
+                    :Exhuast_manifold ,
+                    :Fuel_Type ,
+                    :Gasoline_particulate_filter ,
+                    :Gearbox ,
+                    :MAF_sensor ,
+                    :Mounting_technology ,
+                    :Reae_Axle_steering ,
+                    :Sensors ,
+                    :Silensrs ,
+                    :Snow_chains ,
+                    :Steering ,
+                    :TIRE ,
+                    :Temperature_Measuring_Signals ,
+                    :The_Auxiliaries ,
+                    :Transmision_System ,
+                    :V_belt ,
+                    :V_ribbed_belts ,
+                    :Wheel_bearings ,
+                    :Wideband_sensors ,
+                    :brake_pad ,
+                    :brake_servo ,
+                    :brake_shoes ,
+                    :charge_air_cooler ,
+                    :connecting_rod ,
+                    :coolant ,
+                    :cooling ,
+                    :crankshaft ,
+                    :cylinder_deactivation ,
+                    :cylinder_head ,
+                    :cylinder_head_gasket ,
+                    :cylinders ,
+                    :drum_brake ,
+                    :engine_block ,
+                    :engine_control ,
+                    :engine_control_unit ,
+                    :engine_mounts ,
+                    :engine_sealing_technology ,
+                    :fuel_pump ,
+                    :glow_time_relays ,
+                    :hybrid_drive ,
+                    :hydraulic_shock_absorber ,
+                    :independent_suspension ,
+                    :oil_pump ,
+                    :oil_sump ,
+                    :overrunning_alternator_pilley ,
+                    :overrunning_belt_pulleys ,
+                    :oxygen_sensor ,
+                    :petrol_direct_injection ,
+                    :piston ,
+                    :plain_bearings ,
+                    :power_steering ,
+                    :rigid_axle ,
+                    :shock_absorbers ,
+                    :stabiliser ,
+                    :stop_start_system ,
+                    :summer_tyres ,
+                    :suspension_link ,
+                    :suspension_springs ,
+                    :timing_drive ,
+                    :toothed_belt ,
+                    :valves ,
+                    :vibration_dampers ,
+                    :water_pump ,
+                    :wheel ,
+                    :wheel_carrier ,
+                    :wheel_suspension ,
+                    :winter_tyres ,
+                    <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Positioned_at
+:Positioned_at rdf:type owl:ObjectProperty ;
+               rdfs:domain :Vehicle_Component ,
+                           :Vehicle_Property ;
+               rdfs:range :Position_In_Vehicle .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#belongsToVehicleComponent
+:belongsToVehicleComponent rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Vehicle_Property ;
+                           rdfs:range :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#hasDynamicVehicleProperty
+:hasDynamicVehicleProperty rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Fuel_Type ,
+                                       :Sensors ,
+                                       :Snow_chains ,
+                                       :Temperature_Measuring_Signals ,
+                                       :coolant ,
+                                       :cooling ,
+                                       :summer_tyres ,
+                                       :winter_tyres ;
+                           rdfs:range :Dynamic_vehicle_property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#hasStaticVehicleProperty
+:hasStaticVehicleProperty rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Body ,
+                                      :CHASIS ,
+                                      :Engine ,
+                                      :Transmision_System ;
+                          rdfs:range :StatiC_Vehicle_Property .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Brake_calliper
+<http://www.semanticweb.org/memoona/ontologies/2022/2/Brake_calliper> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#ACTUABLE_VEHICLE_PROPERTY
+:ACTUABLE_VEHICLE_PROPERTY rdf:type owl:Class ;
+                           rdfs:subClassOf :Dynamic_vehicle_property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Accessory_Drive
+:Accessory_Drive rdf:type owl:Class ;
+                 rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Actrive_steering
+:Actrive_steering rdf:type owl:Class ;
+                  rdfs:subClassOf :Steering .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Antilock_brake_system
+:Antilock_brake_system rdf:type owl:Class ;
+                       rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Belt_Drive_Components
+:Belt_Drive_Components rdf:type owl:Class ;
+                       rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Binary_lambda_sensor
+:Binary_lambda_sensor rdf:type owl:Class ;
+                      rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Body
+:Body rdf:type owl:Class ;
+      rdfs:subClassOf :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake
+:Brake rdf:type owl:Class ;
+       rdfs:subClassOf :Body .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake_Line
+:Brake_Line rdf:type owl:Class ;
+            rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake_cylinder
+:Brake_cylinder rdf:type owl:Class ;
+                rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake_disc
+:Brake_disc rdf:type owl:Class ;
+            rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake_drum
+:Brake_drum rdf:type owl:Class ;
+            rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake_fluid
+:Brake_fluid rdf:type owl:Class ;
+             rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brake_lubricant
+:Brake_lubricant rdf:type owl:Class ;
+                 rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Brand
+:Brand rdf:type owl:Class ;
+       rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#CABIN
+:CABIN rdf:type owl:Class ;
+       rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#CHASIS
+:CHASIS rdf:type owl:Class ;
+        rdfs:subClassOf :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Camshaft
+:Camshaft rdf:type owl:Class ;
+          rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Catalytic_converter
+:Catalytic_converter rdf:type owl:Class ;
+                     rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Chain_drive
+:Chain_drive rdf:type owl:Class ;
+             rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Clutch
+:Clutch rdf:type owl:Class ;
+        rdfs:subClassOf :Transmision_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Coupling_rod
+:Coupling_rod rdf:type owl:Class ;
+              rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#DOOR
+:DOOR rdf:type owl:Class ;
+      rdfs:subClassOf :CABIN .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Diesel_particulate_filter
+:Diesel_particulate_filter rdf:type owl:Class ;
+                           rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Differential
+:Differential rdf:type owl:Class ;
+              rdfs:subClassOf :Transmision_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Disc_brake
+:Disc_brake rdf:type owl:Class ;
+            rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Dynamic_vehicle_property
+:Dynamic_vehicle_property rdf:type owl:Class ;
+                          rdfs:subClassOf :Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Electric_parking_brak
+:Electric_parking_brak rdf:type owl:Class ;
+                       rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Electric_power_steering_system
+:Electric_power_steering_system rdf:type owl:Class ;
+                                rdfs:subClassOf :Steering .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Engine
+:Engine rdf:type owl:Class ;
+        rdfs:subClassOf :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Exhuast_System
+:Exhuast_System rdf:type owl:Class ;
+                rdfs:subClassOf :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Exhuast_manifold
+:Exhuast_manifold rdf:type owl:Class ;
+                  rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Fuel_Type
+:Fuel_Type rdf:type owl:Class ;
+           rdfs:subClassOf :The_Auxiliaries .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#GEAR
+:GEAR rdf:type owl:Class ;
+      rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Gasoline_particulate_filter
+:Gasoline_particulate_filter rdf:type owl:Class ;
+                             rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Gearbox
+:Gearbox rdf:type owl:Class ;
+         rdfs:subClassOf :Transmision_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#MAF_sensor
+:MAF_sensor rdf:type owl:Class ;
+            rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#MODEL
+:MODEL rdf:type owl:Class ;
+       rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Mounting_technology
+:Mounting_technology rdf:type owl:Class ;
+                     rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#OBSERVABLE_VEHICLE_PROPERTY
+:OBSERVABLE_VEHICLE_PROPERTY rdf:type owl:Class ;
+                             rdfs:subClassOf :Dynamic_vehicle_property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Position_In_Vehicle
+:Position_In_Vehicle rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#REGISTRATION_NUMBER
+:REGISTRATION_NUMBER rdf:type owl:Class ;
+                     rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Reae_Axle_steering
+:Reae_Axle_steering rdf:type owl:Class ;
+                    rdfs:subClassOf :Steering .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#SEATS
+:SEATS rdf:type owl:Class ;
+       rdfs:subClassOf :CABIN .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#STERING_WHEEL
+:STERING_WHEEL rdf:type owl:Class ;
+               rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Sensors
+:Sensors rdf:type owl:Class ;
+         rdfs:subClassOf :The_Auxiliaries .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Silensrs
+:Silensrs rdf:type owl:Class ;
+          rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Snow_chains
+:Snow_chains rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#StatiC_Vehicle_Property
+:StatiC_Vehicle_Property rdf:type owl:Class ;
+                         rdfs:subClassOf :Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Steering
+:Steering rdf:type owl:Class ;
+          rdfs:subClassOf :Body .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#TIRE
+:TIRE rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Temperature_Measuring_Signals
+:Temperature_Measuring_Signals rdf:type owl:Class ;
+                               rdfs:subClassOf :The_Auxiliaries .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#The_Auxiliaries
+:The_Auxiliaries rdf:type owl:Class ;
+                 rdfs:subClassOf :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Transmision_System
+:Transmision_System rdf:type owl:Class ;
+                    rdfs:subClassOf :Vehicle_Component .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#V_belt
+:V_belt rdf:type owl:Class ;
+        rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#V_ribbed_belts
+:V_ribbed_belts rdf:type owl:Class ;
+                rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Vehicle
+:Vehicle rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Vehicle_Component
+:Vehicle_Component rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Vehicle_Property
+:Vehicle_Property rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Vehicle_Type
+:Vehicle_Type rdf:type owl:Class ;
+              rdfs:subClassOf :Vehicle .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#WINDOW
+:WINDOW rdf:type owl:Class ;
+        rdfs:subClassOf :StatiC_Vehicle_Property .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Wheel_bearings
+:Wheel_bearings rdf:type owl:Class ;
+                rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Wideband_sensors
+:Wideband_sensors rdf:type owl:Class ;
+                  rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#brake_pad
+:brake_pad rdf:type owl:Class ;
+           rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#brake_servo
+:brake_servo rdf:type owl:Class ;
+             rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#brake_shoes
+:brake_shoes rdf:type owl:Class ;
+             rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#charge_air_cooler
+:charge_air_cooler rdf:type owl:Class ;
+                   rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#connecting_rod
+:connecting_rod rdf:type owl:Class ;
+                rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#coolant
+:coolant rdf:type owl:Class ;
+         rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#cooling
+:cooling rdf:type owl:Class ;
+         rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#crankshaft
+:crankshaft rdf:type owl:Class ;
+            rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#cylinder_deactivation
+:cylinder_deactivation rdf:type owl:Class ;
+                       rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#cylinder_head
+:cylinder_head rdf:type owl:Class ;
+               rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#cylinder_head_gasket
+:cylinder_head_gasket rdf:type owl:Class ;
+                      rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#cylinders
+:cylinders rdf:type owl:Class ;
+           rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#drum_brake
+:drum_brake rdf:type owl:Class ;
+            rdfs:subClassOf :Brake .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#engine_block
+:engine_block rdf:type owl:Class ;
+              rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#engine_control
+:engine_control rdf:type owl:Class ;
+                rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#engine_control_unit
+:engine_control_unit rdf:type owl:Class ;
+                     rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#engine_mounts
+:engine_mounts rdf:type owl:Class ;
+               rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#engine_sealing_technology
+:engine_sealing_technology rdf:type owl:Class ;
+                           rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#fuel_pump
+:fuel_pump rdf:type owl:Class ;
+           rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#glow_time_relays
+:glow_time_relays rdf:type owl:Class ;
+                  rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#hybrid_drive
+:hybrid_drive rdf:type owl:Class ;
+              rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#hydraulic_shock_absorber
+:hydraulic_shock_absorber rdf:type owl:Class ;
+                          rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#independent_suspension
+:independent_suspension rdf:type owl:Class ;
+                        rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#oil_pump
+:oil_pump rdf:type owl:Class ;
+          rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#oil_sump
+:oil_sump rdf:type owl:Class ;
+          rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#overrunning_alternator_pilley
+:overrunning_alternator_pilley rdf:type owl:Class ;
+                               rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#overrunning_belt_pulleys
+:overrunning_belt_pulleys rdf:type owl:Class ;
+                          rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#oxygen_sensor
+:oxygen_sensor rdf:type owl:Class ;
+               rdfs:subClassOf :Exhuast_System .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#petrol_direct_injection
+:petrol_direct_injection rdf:type owl:Class ;
+                         rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#piston
+:piston rdf:type owl:Class ;
+        rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#plain_bearings
+:plain_bearings rdf:type owl:Class ;
+                rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#power_steering
+:power_steering rdf:type owl:Class ;
+                rdfs:subClassOf :Steering .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#rigid_axle
+:rigid_axle rdf:type owl:Class ;
+            rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#shock_absorbers
+:shock_absorbers rdf:type owl:Class ;
+                 rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#stabiliser
+:stabiliser rdf:type owl:Class ;
+            rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#stop_start_system
+:stop_start_system rdf:type owl:Class ;
+                   rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#summer_tyres
+:summer_tyres rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#suspension_link
+:suspension_link rdf:type owl:Class ;
+                 rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#suspension_springs
+:suspension_springs rdf:type owl:Class ;
+                    rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#timing_drive
+:timing_drive rdf:type owl:Class ;
+              rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#toothed_belt
+:toothed_belt rdf:type owl:Class ;
+              rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#valves
+:valves rdf:type owl:Class ;
+        rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#vibration_dampers
+:vibration_dampers rdf:type owl:Class ;
+                   rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#water_pump
+:water_pump rdf:type owl:Class ;
+            rdfs:subClassOf :Engine .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#wheel
+:wheel rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#wheel_carrier
+:wheel_carrier rdf:type owl:Class ;
+               rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#wheel_suspension
+:wheel_suspension rdf:type owl:Class ;
+                  rdfs:subClassOf :CHASIS .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#winter_tyres
+:winter_tyres rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL
+<http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Tyres_&_WHEEL> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf :Vehicle_Component .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Actuator
+:Actuator rdf:type owl:NamedIndividual ,
+                   :Sensors .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#BMW
+:BMW rdf:type owl:NamedIndividual ,
+              :Brand ,
+              :Sensors .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#BUS
+:BUS rdf:type owl:NamedIndividual ,
+              :Vehicle_Type .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#CLOSE
+:CLOSE rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Car
+:Car rdf:type owl:NamedIndividual ,
+              :Vehicle_Type .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#LEFT
+:LEFT rdf:type owl:NamedIndividual ,
+               :STERING_WHEEL .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#OPEN
+:OPEN rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#RIGHT
+:RIGHT rdf:type owl:NamedIndividual ,
+                :STERING_WHEEL .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#Signals
+:Signals rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#TRUCK
+:TRUCK rdf:type owl:NamedIndividual ,
+                :Vehicle_Type .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#color
+:color rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#hardness
+:hardness rdf:type owl:NamedIndividual ,
+                   :OBSERVABLE_VEHICLE_PROPERTY .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#odor
+:odor rdf:type owl:NamedIndividual ,
+               :OBSERVABLE_VEHICLE_PROPERTY .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#shape
+:shape rdf:type owl:NamedIndividual ,
+                :OBSERVABLE_VEHICLE_PROPERTY .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#size
+:size rdf:type owl:NamedIndividual ,
+               :OBSERVABLE_VEHICLE_PROPERTY .
+
+
+###  http://www.semanticweb.org/memoona/ontologies/2022/2/Vehicleontology#texture
+:texture rdf:type owl:NamedIndividual ,
+                  :OBSERVABLE_VEHICLE_PROPERTY .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
